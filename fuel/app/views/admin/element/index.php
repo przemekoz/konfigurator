@@ -6,7 +6,7 @@
 <?php echo Form::open(array("action" => "/admin/" . $elementType, 'method' => 'get')); ?>
 <div class="row">
 	<div class="col-md-3 ">
-		<?php if ($elementType != 'crown' && $elementType != 'lamp' ) : ?>
+		<?php if ($elementType == 'other' || $elementType == 'lamp' ) : ?>
 			<?php echo Form::select('category', Input::get('category', ''), array('' => '-category-', 'CITY'=>'City/street', 'HOME'=>'Home/garden'), array('class' => 'col-md-4 form-control', 'placeholder'=>'Category')); ?>
 		<?php endif; ?>
 		<?php if ($elementType == 'crown' || $elementType == 'lamp') : ?>
