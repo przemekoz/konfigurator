@@ -45,7 +45,7 @@
 			<th></th>
 			<th>Name</th>
 			<th>Weight</th>
-			<?php if ($elementType != 'crown' && $elementType != 'lamp' ) : ?><th>Category</th><?php endif; ?>
+			<?php if ($elementType == 'other' || $elementType == 'lamp' ) : ?><th>Category</th><?php endif; ?>
 			<?php if ($elementType == 'crown' || $elementType == 'lamp' ) : ?><th>Connection</th><?php endif; ?>
 			<?php if ($elementType == 'column' ) : ?><th>Column category</th><?php endif; ?>
 			<?php if ($elementType == 'column' ) : ?><th>Column material</th><?php endif; ?>
@@ -58,7 +58,7 @@
 			<td><?php echo '<img style="max-height:100px; max-width: 100px" src="'.Images::getImageSrc($item->getImageSrc('mini')).'"/>'; ?></td>
 			<td><?php echo $item->default ? '<strong>' : '' ?><?php echo $item->name . ' #' . $item->id; ?><?php echo $item->default ? '</strong>' : '' ?></td>
 			<td><?php echo $item->weight ? $item->weight . 'kg' : '-'; ?></td>
-			<?php if ($elementType != 'crown' && $elementType != 'lamp' ) : ?><td><?php echo $item->category; ?></td><?php endif; ?>
+			<?php if ($elementType == 'other' || $elementType == 'lamp' ) : ?><td><?php echo $item->category; ?></td><?php endif; ?>
 			<?php if ($item->type == 'CROWN' || $item->type == 'LAMP' || $item->type == 'KINKIET') : ?><td><?php echo $item->connection; ?></td><?php endif; ?>
 			<?php if ($item->type == 'COLUMN' ) : ?><td><?php echo $columnCategories[$item->column_category]; ?></td><?php endif; ?>
 			<?php if ($item->type == 'COLUMN' ) : ?><td><?php echo $columnMaterials[$item->column_category_material]; ?></td><?php endif; ?>
