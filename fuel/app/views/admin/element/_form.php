@@ -24,7 +24,7 @@
 			<input type="hidden" name="column_category_material" value="0"/>
 		<?php endif; ?>
 
-		<?php if ($elementType == 'OTHER' && $elementType == 'LAMP' ) : ?>
+		<?php if ($elementType == 'OTHER' || $elementType == 'LAMP' ) : ?>
 			<div class="form-group">
 				<?php echo Form::label('Category', 'category', array('class'=>'control-label')); ?>
 				<?php echo Form::select('category', Input::post('category', isset($element) ? $element->category : 'CITY'), array('CITY'=>'City/street', 'HOME'=>'Home/garden'), array('class' => 'col-md-4 form-control', 'placeholder'=>'Category')); ?>
