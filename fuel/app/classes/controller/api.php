@@ -473,10 +473,10 @@ function getWhere() {
   $where = array();
 
   if (strlen(Input::get('category'))) {
-    $where[] = "col.category = '" . (Input::get('category') == 'CITY' ? 'CITY' : 'HOME') . "'";
+    $where[] = "lam.category = '" . (Input::get('category') == 'CITY' ? 'CITY' : 'HOME') . "'";
   }
   else {
-    $where[] = "col.category = 'CITY'";
+    $where[] = "lam.category = 'CITY'";
   }
 
   if (strlen(Input::get('connection'))) {
@@ -516,10 +516,10 @@ function getKinkietWhere() {
   $where = array();
 
   if (strlen(Input::get('category'))) {
-    $where[] = "kin.category = '" . (Input::get('category') == 'CITY' ? 'CITY' : 'HOME') . "'";
+    $where[] = "lam.category = '" . (Input::get('category') == 'CITY' ? 'CITY' : 'HOME') . "'";
   }
   else {
-    $where[] = "kin.category = 'CITY'";
+    $where[] = "lam.category = 'CITY'";
   }
 
   if (strlen(Input::get('connection'))) {
