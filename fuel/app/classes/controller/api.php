@@ -529,7 +529,9 @@ function getKinkietWhere() {
     $where[] = "lam.connection = 'UP'";
   }
 
-  $where[] = "lam.id = '" . intval(Input::get('lampId')) . "'";
+  if (strlen(Input::get('lampId'))) {
+    $where[] = "lam.id = '" . intval(Input::get('lampId')) . "'";
+  }
 
   return implode(' AND ', $where);
 }
